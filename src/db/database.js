@@ -1,12 +1,12 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
-const dbPath = path.resolve(__dirname, '3d_rpg.db');
+const dbPath = path.resolve(__dirname, 'game.db');
 const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
     console.error(err.message);
   }
-  console.log('Connected to the 3d_rpg.db database.');
+  console.log('Connected to the game.db database.');
 });
 
 db.serialize(() => {

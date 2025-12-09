@@ -37,28 +37,23 @@ npm install
 ### 3. 환경 변수 설정
 프로젝트 루트에 `.env` 파일 생성:
 ```env
-JWT_SECRET=your-super-secret-key
+API_KEY="your_secret_api_key"
+DATABASE_URL="sqlite:./src/db/game.db"
+DEBUG=True
+NODE_ENV=development
 ```
 > `your-super-secret-key`는 임의의 긴 문자열로 설정하세요.
 
 ### 4. 서버 실행
-`package.json` scripts에 아래 추가:
-```json
-"scripts": {
-  "start": "node server.js",
-  "test": "echo \"Error: no test specified\" && exit 1"
-}
-```
-서버 실행:
 ```bash
-npm start
+node server.js
 ```
-콘솔에 `Connected to the 3d_rpg.db database.` 메시지가 출력되면 정상 실행입니다.
+콘솔에 `Connected to the game.db database.` 메시지가 출력되면 정상 실행입니다.
 
 ---
 
 ## 데이터베이스 (SQLite)
-- 파일 위치: `/src/db/3d_rpg.db`
+- 파일 위치: `/src/db/game.db`
 - 테이블 구조:
 
 **users**
