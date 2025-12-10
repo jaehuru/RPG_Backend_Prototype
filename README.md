@@ -35,14 +35,24 @@ npm install
 ```
 
 ### 3. 환경 변수 설정
-프로젝트 루트에 `.env` 파일 생성:
+프로젝트 루트에 `.env` 파일 생성
 ```env
-API_KEY="your_secret_api_key"
+# .env example
+
+# 서버가 실행될 포트를 지정
+PORT=3000
+
+# JWT(JSON Web Token)를 서명하고 검증하는데 사용되는 비밀 키
+# 보안을 위해 임의의 긴 문자열로 설정
+JWT_SECRET=your-super-secret-key
+
+# 데이터 베이스 파일의 경로 지정
 DATABASE_URL="sqlite:./src/db/game.db"
+
+# 디버그 로그
 DEBUG=True
 NODE_ENV=development
 ```
-> `your-super-secret-key`는 임의의 긴 문자열로 설정하세요.
 
 ### 4. 서버 실행
 ```bash

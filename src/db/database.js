@@ -1,8 +1,10 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
-const dbPath = path.resolve(__dirname, 'game.db');
-const db = new sqlite3.Database(dbPath, (err) => {
+const dbFilePath = process.env.DATABASE_URL ?
+  process.env.DATABASE_URL.replace('sqlite:', '') :
+  path.resolve(__dirname, 'game.db');
+const db = new sqlite3.Database(dbFilePath, (err) => {
   if (err) {
     console.error(err.message);
   }
